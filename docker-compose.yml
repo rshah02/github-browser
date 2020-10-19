@@ -1,0 +1,14 @@
+version: '3'
+services:
+  github-browser:
+    build: .
+    image: github-browser
+    container_name: github-browser
+    ports:
+      - 3000:3000
+    volumes:
+      - ./github-browser:/github-browser
+    environment:
+      - NODE_ENV=/github-browser
+      - NODE_PATH=src
+    command: /bin/sleep 216000
